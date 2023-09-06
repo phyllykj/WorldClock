@@ -1,4 +1,69 @@
 body {
+  background-color: #40a8c4;
+}
+
+.container {
   background-color: #235784;
   color: #f7aa00;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+select {
+  width: 100%;
+  display: block;
+  padding: 20px;
+  font-size: 20px;
+  background-color: #bcdbdf;
+  color: #235784;
+  border-radius: 20px;
+  font-family: "Comfortaa", cursive;
+}
+
+h1 {
+  font-size: 30px;
+  color: #f7aa00;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+}
+
+h2 {
+  margin: 0;
+}
+.city {
+  font-size: 18px;
+  color: #bcdbdf;
+  font-family: "Comfortaa", cursive;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px dashed #bcdbdf;
+}
+.time {
+  font-size: 32px;
+  color: #f7aa00;
+  vertical-align: middle;
+}
+
+.time small {
+  font-size: 14px;
+}
+.date {
+  font-size: 14px;
+  color: #f7aa00;
+  font-family: "Comfortaa", cursive;
+}
+
+footer {
+  text-align: center;
+  margin: 20px;
+  font-family: "Comfortaa", cursive;
+  color: #bcdbdf;
 }

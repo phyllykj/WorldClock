@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="worldclock.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
     <title>World Clock</title>
   </head>
   <body>
@@ -12,34 +18,45 @@
 
       <select>
         <option value="">Select a country...</option>
-        <option value="london">London🇬🇧</option>
-        <option value="kl">Kuala Lumpur🇲🇾</option>
-        <option value="NYC">New York🇺🇸</option>
-        <option value="barcelona">Barcelona🇪🇸</option>
+        <option value="kl">Kuala Lumpur 🇲🇾</option>
+        <option value="dc">Washington DC 🇺🇸</option>
+        <option value="barcelona">Barcelona 🇪🇸</option>
+          <option value="qatar">Dubai 🇦🇪</option>
       </select>
 
       <div class="city">
-        <h2>London🇬🇧</h2>
+        <div>
+          <h2>Barcelona 🇪🇸</h2>
+          <div class="date">Wed 6th Sept 2023</div>
+        </div>
+        <div class="time">17 : 35 : 42 <small>AM</small></div>
       </div>
-      <div class="date">
-        <h4>Wed 6th Sept 2023</h4>
-      </div>
-      <div class="time">17 : 35 : 42</div>
 
       <div class="city">
-        <h2>Kuala Lumpur🇲🇾</h2>
+        <div>
+          <h2>Kuala Lumpur 🇲🇾</h2>
+          <div class="date">Wed 6th Sept 2023</div>
+        </div>
+        <div class="time">23 : 35 : 42 <small>AM</small></div>
       </div>
-      <div class="date">
-        <h4>Wed 6th Sept 2023</h4>
+    
+    <div class="city">
+        <div>
+          <h2>Washington DC 🇺🇸</h2>
+          <div class="date">Wed 6th Sept 2023</div>
+        </div>
+        <div class="time">23 : 35 : 42 <small>AM</small></div>
       </div>
-      <div class="time">23 : 35 : 42</div>
-      <footer>
-        This project was coded by Phylly Jones 💃🏼 and is
-        <a href="https://github.com/phyllykj/WorldClock" target="_blank">
-          open-sourced on Github</a
-        >
-      </footer>
     </div>
+    </div>
+
+    <footer>
+      This project was coded by Phylly Jones 💃🏼 and is
+      <a href="https://github.com/phyllykj/WorldClock" target="_blank">
+        open-sourced on Github</a
+      >
+    </footer>
+
     <script src="worldclock.js"></script>
   </body>
 </html>
