@@ -40,6 +40,10 @@ let citiesSelectElement = document.querySelector("#selectCity");
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityTime = moment().tz(cityTimeZone);
+  if (cityTimeZone === "current") {
+    moment.tz.guess();
+  }
+
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let selectedCity = document.querySelector(".cities");
 
