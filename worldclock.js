@@ -16,21 +16,42 @@ function displayTime() {
     .format("ddd Mo MMM YYYY");
   barcelonaTimeElement.innerHTML = moment()
     .tz("Europe/Madrid")
-    .format("H : mm : ss [<small>]A[</small>]");
+    .format("HH : mm : ss [<small>]A[</small>]");
 
   kualaLumpurDateElement.innerHTML = moment()
     .tz("Asia/Kuala_Lumpur")
     .format("ddd Mo MMM YYYY");
   kualaLumpurTimeElement.innerHTML = moment()
     .tz("Asia/Kuala_Lumpur")
-    .format("H : mm : ss [<small>]A[</small>]");
+    .format("HH : mm : ss [<small>]A[</small>]");
 
   washingtonDCDateElement.innerHTML = moment()
     .tz("US/Eastern")
     .format("ddd Mo MMM YYYY");
   washingtonDCTimeElement.innerHTML = moment()
     .tz("US/Eastern")
-    .format("H : mm : ss [<small>]A[</small>]");
+    .format("HH : mm : ss [<small>]A[</small>]");
 }
 
 setInterval(displayTime, 1000);
+
+let citiesSelectElement = document.querySelector("#selectCity");
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityTime = moment().tz(cityTimeZone);
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let selectedCity = document.querySelector(".cities");
+
+  selectedCity.innerHTML = `<div class="city" id="kl">
+        <div>
+          <h2>${cityName}</h2>
+          <div class="date">${cityTime.format("ddd Mo MMM YYYY")}</div>
+        </div>
+        <div class="time">${cityTime.format(
+          "HH : mm : ss [<small>]A[</small>]"
+        )}</div>
+      </div>`;
+}
+
+citiesSelectElement.addEventListener("change", updateCity);
