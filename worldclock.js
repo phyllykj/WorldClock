@@ -44,19 +44,18 @@ function restoreHomepage() {
 }
 
 function updateCity(event) {
+  event.preventDefault();
   let cityTimeZone = event.target.value;
-  let cityTime = moment().tz(cityTimeZone);
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
-  if (cityTimeZone === "home") {
-    restoreHomepage;
-  }
+  if (cityTimeZone > "") {
+    let cityTime = moment().tz(cityTimeZone);
+    if (cityTimeZone === "current") {
+      cityTimeZone = moment.tz.guess();
+    }
 
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let selectedCity = document.querySelector(".cities");
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let selectedCity = document.querySelector(".cities");
 
-  selectedCity.innerHTML = `<div class="city" >
+    selectedCity.innerHTML = `<div class="city" >
         <div>
           <h2>${cityName}</h2>
           <div class="date">${cityTime.format("ddd Mo MMM YYYY")}</div>
@@ -65,6 +64,7 @@ function updateCity(event) {
           "HH : mm : ss[<small>] A [</small>]"
         )}</div>
       </div>`;
+  }
 }
 
 citiesSelectElement.addEventListener("change", updateCity);

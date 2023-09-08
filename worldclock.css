@@ -1,5 +1,7 @@
 body {
-  background-color: #40a8c4;
+  background-image: url(css/image2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -7,7 +9,7 @@ body {
   color: #f7aa00;
   max-width: 600px;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
@@ -63,7 +65,13 @@ h2 {
 
 footer {
   text-align: center;
+  background-size: 50%;
   margin: 20px;
   font-family: "Comfortaa", cursive;
   color: #bcdbdf;
+  height: 100px;
+  width: 250px;
+}
+a {
+  color: blue;
 }
