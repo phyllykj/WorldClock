@@ -37,23 +37,32 @@ setInterval(displayTime, 1000);
 
 let citiesSelectElement = document.querySelector("#selectCity");
 
+function restoreHomepage() {
+  let originalContent = selectedCity.innerHTML;
+
+  selectedCity.innerHTML = originalContent;
+}
+
 function updateCity(event) {
   let cityTimeZone = event.target.value;
   let cityTime = moment().tz(cityTimeZone);
   if (cityTimeZone === "current") {
-    moment.tz.guess();
+    cityTimeZone = moment.tz.guess();
+  }
+  if (cityTimeZone === "home") {
+    restoreHomepage;
   }
 
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let selectedCity = document.querySelector(".cities");
 
-  selectedCity.innerHTML = `<div class="city" id="kl">
+  selectedCity.innerHTML = `<div class="city" >
         <div>
           <h2>${cityName}</h2>
           <div class="date">${cityTime.format("ddd Mo MMM YYYY")}</div>
         </div>
         <div class="time">${cityTime.format(
-          "HH : mm : ss [<small>]A[</small>]"
+          "HH : mm : ss[<small>] A [</small>]"
         )}</div>
       </div>`;
 }
