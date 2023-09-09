@@ -63,4 +63,11 @@ function updateCity(event) {
 
 let citiesSelectElement = document.querySelector("#selectCity");
 let intervalId = null;
-citiesSelectElement.addEventListener("change", updateCity);
+citiesSelectElement.addEventListener("change", function () {
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+
+  intervalId = setInterval(updateCity, 1000);
+});
+updateCity({ target: citiesSelectElement });
