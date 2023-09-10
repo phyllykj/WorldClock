@@ -33,8 +33,6 @@ function displayTime() {
     .format("HH : mm : ss [<small>]A[</small>]");
 }
 
-setInterval(displayTime, 1000);
-
 function updateCity(event) {
   event.preventDefault();
   let cityTimeZone = event.target.value;
@@ -58,16 +56,12 @@ function updateCity(event) {
         <div class="time">${cityTime.format(
           "HH : mm : ss[<small>] A [</small>]"
         )}</div>
-      </div>`;
+      </div>
+  `;
 }
 
-let citiesSelectElement = document.querySelector("#selectCity");
-let intervalId = null;
-citiesSelectElement.addEventListener("change", function () {
-  if (intervalId) {
-    clearInterval(intervalId);
-  }
+displayTime();
+setInterval(displayTime, 1000);
 
-  intervalId = setInterval(updateCity, 1000);
-});
-updateCity({ target: citiesSelectElement });
+let citiesSelectElement = document.querySelector("#selectCity");
+citiesSelectElement.addEventListener("change", updateCity);
